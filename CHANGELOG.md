@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.3 - 2026-11-08
+
+- READMEにVideo Speed Controllerとの併用方法と注意事項を追加。
+- Userscriptの説明文にVideo Speed Controller等との併用メリットを明記。
+- 説明・導入文書・配布メタデータのみを更新。再生・シーク処理のロジックは変更なし。
+
+## 1.2.2 - 2026-11-08
+
+- READMEを全面拡充し、導入・旧版からの移行・更新・診断・制約・トラブルシューティングを明記。
+- Userscriptの説明文を機能に合わせて具体化。
+- 動作ロジックは変更なし。1.2.1からの更新では説明・配布メタデータのみを更新。
+
 ## 1.2.1 - 2026-11-08
 
 - GitHub公開用のnamespace、homepage、support、download、update URLを設定。

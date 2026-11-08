@@ -6,7 +6,8 @@ const repo = 'https://github.com/ButaMonky/nicovideo-speed-seek-sync';
 const raw = 'https://raw.githubusercontent.com/ButaMonky/nicovideo-speed-seek-sync/main/nicovideo-speed-seek-sync.user.js';
 for (const line of [
   '// @namespace    ' + repo,
-  '// @version      1.2.1',
+  '// @version      1.2.3',
+  '// @description:ja Video Speed Controller等で変更した再生速度をニコニコプレイヤー内部へ同期し、外部シーク後の内部時計も補正します。動画自体への再シークは行いません。旧単独版は無効にしてください。',
   '// @downloadURL  ' + raw,
   '// @updateURL    ' + raw,
   '// @homepageURL  ' + repo,
