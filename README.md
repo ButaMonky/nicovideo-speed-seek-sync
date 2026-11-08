@@ -1,6 +1,6 @@
 # ニコニコ速度制限解除＋外部シーク同期
 
-**Nicovideo Speed + Seek Sync ? integrated userscript**
+**Nicovideo Speed + Seek Sync - integrated userscript**
 
 ニコニコ動画の再生速度同期と、外部からシークした際のプレイヤー内部時計同期を1本にまとめたUserscriptです。
 
