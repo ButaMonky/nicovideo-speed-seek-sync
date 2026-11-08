@@ -2,9 +2,9 @@
 // @name         Nicovideo Speed + Seek Sync (integrated)
 // @name:ja      ニコニコ 速度制限解除＋外部シーク同期（統合版）
 // @namespace    https://github.com/ButaMonky/nicovideo-speed-seek-sync
-// @version      1.2.2
-// @description  Synchronizes external playback-rate changes with the Nico player and aligns its internal clock after external seeks without seeking the video again.
-// @description:ja 外部の再生速度変更をニコニコプレイヤーへ同期し、外部シーク後の内部時計と表示時刻のずれを補正します。動画への再シークは行いません。旧単独版を無効にして使用してください。
+// @version      1.2.3
+// @description  Syncs playback-rate changes from Video Speed Controller and similar extensions with the Nico player, and aligns its internal clock after external seeks.
+// @description:ja Video Speed Controller等で変更した再生速度をニコニコプレイヤー内部へ同期し、外部シーク後の内部時計も補正します。動画自体への再シークは行いません。旧単独版は無効にしてください。
 // @match        https://www.nicovideo.jp/watch/*
 // @run-at       document-start
 // @grant        none
@@ -49,7 +49,7 @@
     return;
   }
   Reflect.defineProperty(window, INTEGRATION_MARKER, {
-    value: Object.freeze({ version: '1.2.2', speed: '1.1', seek: '0.1.4' }),
+    value: Object.freeze({ version: '1.2.3', speed: '1.1', seek: '0.1.4' }),
     configurable: false, enumerable: false, writable: false
   });
 
@@ -131,7 +131,7 @@ Object.defineProperty(Object.prototype, 'setPlaybackRate', {
   const API_NAME = '__NICO_EXTERNAL_SEEK_SYNC__';
   if (Object.prototype.hasOwnProperty.call(window, API_NAME)) return;
 
-  const VERSION = '1.2.2';
+  const VERSION = '1.2.3';
   const DEADLINE_MS = 30000; // Construction discovery only; NOT a seek delay.
   const EPSILON_SECONDS = 0.002; // Comparison tolerance; NOT a seek step.
   const HOLD_LIMIT_MS = 8000; // Safety fuse for this feature, NOT a seek delay/step.
