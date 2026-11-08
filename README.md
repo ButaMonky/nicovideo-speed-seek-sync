@@ -9,13 +9,13 @@
 
 | 項目 | 内容 |
 |---|---|
-| バージョン | **1.2.2** |
+| バージョン | **1.2.3** |
 | 対象 | ニコニコ動画の通常視聴ページ `https://www.nicovideo.jp/watch/*` |
 | 対応マネージャー | Tampermonkey / Violentmonkey |
 | 配布形式 | 単一のUserscript |
 | ライセンス | MIT（第三者コードの表示は [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)） |
 | 更新元 | このリポジトリの `main` ブランチ |
-| 実機検証 | 現行ニコニコ本番環境での1.2.2検証は未完了 |
+| 実機検証 | 現行ニコニコ本番環境での1.2.3検証は未完了 |
 
 </details>
 
@@ -74,7 +74,7 @@
 
    **[nicovideo-speed-seek-sync.user.js をインストール](https://raw.githubusercontent.com/ButaMonky/nicovideo-speed-seek-sync/main/nicovideo-speed-seek-sync.user.js)**
 
-2. Userscriptマネージャーのインストール確認画面が表示されたら、スクリプト名とバージョンが **1.2.2** であることを確認します。
+2. Userscriptマネージャーのインストール確認画面が表示されたら、スクリプト名とバージョンが **1.2.3** であることを確認します。
 3. インストールを確定します。
 4. マネージャーの一覧に「Nicovideo Speed + Seek Sync (integrated)」が追加されたことを確認します。
 5. スクリプトが有効になっていることを確認します。
@@ -90,6 +90,17 @@
 - `Nicovideo Speed + Seek Sync (integrated)` v1.2.0など、古い統合版
 
 旧版を無効にしたら、ニコニコの視聴ページをページ全体で再読み込みします。SPA内の画面遷移だけでは古いフックが残る場合があるため、通常の再読み込みを行ってください。
+
+### Video Speed Controllerと併用するとき
+
+この統合版は、**Video Speed Controller（VSC）** など、HTMLVideoElementの再生速度（`playbackRate`）を変更する拡張機能と一緒に使うと便利です。VSCでニコニコ動画の速度を変更すると、このUserscriptが変更を検知し、ニコニコプレイヤー内部の速度状態へ同期します。
+
+1. Video Speed Controllerを別途ブラウザへインストールします。
+2. ニコニコの通常視聴ページで、VSCの操作ボタンまたはショートカットから再生速度を変更します。
+3. 動画とニコニコプレイヤー内部の速度状態が追従するか確認します。
+4. 必要に応じて外部シークも行い、表示時刻が追従するか確認します。
+
+VSC自体はこのリポジトリに同梱されません。このUserscriptはVSCの代替ではなく、VSCなど外部ツールによる速度変更をニコニコプレイヤー側へ同期する補助ツールです。ブラウザ・VSCのバージョン・プレイヤー更新によって挙動が変わる可能性があり、すべての環境での互換性を保証するものではありません。
 
 ### 手順D：動作を確認
 
@@ -109,13 +120,13 @@
 
 1. 旧統合版1.2.0を無効化します。
 2. 速度同期単独版と外部シーク同期単独版も無効化します。
-3. [新しい統合版1.2.2](https://raw.githubusercontent.com/ButaMonky/nicovideo-speed-seek-sync/main/nicovideo-speed-seek-sync.user.js) をインストールします。
+3. [新しい統合版1.2.3](https://raw.githubusercontent.com/ButaMonky/nicovideo-speed-seek-sync/main/nicovideo-speed-seek-sync.user.js) をインストールします。
 4. 新版だけを有効にし、視聴ページを再読み込みします。
 5. 新版の動作確認後、不要な旧版をマネージャーから削除できます。
 
-### 1.2.1から移行する場合
+### 1.2.1 / 1.2.2から移行する場合
 
-1.2.1にはGitHubの更新先が設定されています。マネージャーの自動更新が有効なら、通常は更新チェック後に1.2.2へ更新できます。すぐに更新したい場合は、マネージャーのダッシュボードから更新を確認してください。
+1.2.1と1.2.2にはGitHubの更新先が設定されています。マネージャーの自動更新が有効なら、通常は更新チェック後に1.2.3へ更新できます。すぐに更新したい場合は、マネージャーのダッシュボードから更新を確認してください。
 
 ## 更新方法
 
@@ -217,7 +228,7 @@ window.__NICO_EXTERNAL_SEEK_SYNC__?.stop()
 - 配布URL・バージョン・重複インストール防止マーカーの検査
 - GitHub Actionsによる継続的な検査
 
-**これらは本番サイトでの動作保証ではありません。** 現行ニコニコ本番ページ、Tampermonkey / Violentmonkey、外部速度変更ツールを組み合わせた1.2.2の実機回帰試験は未完了です。
+**これらは本番サイトでの動作保証ではありません。** 現行ニコニコ本番ページ、Tampermonkey / Violentmonkey、外部速度変更ツールを組み合わせた1.2.3の実機回帰試験は未完了です。
 
 不具合があれば、再現手順・ブラウザ・Userscriptマネージャー・診断レポート（認証情報や個人情報を除いたもの）を添えて [Issues](https://github.com/ButaMonky/nicovideo-speed-seek-sync/issues) へ報告してください。
 
