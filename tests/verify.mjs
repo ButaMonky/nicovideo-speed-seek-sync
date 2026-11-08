@@ -8,7 +8,6 @@ for (const line of [
   '// @namespace    ' + repo,
   '// @version      1.2.3',
   '// @description:ja Video Speed Controller等で変更した再生速度をニコニコプレイヤー内部へ同期し、外部シーク後の内部時計も補正します。動画自体への再シークは行いません。旧単独版は無効にしてください。',
-  '// @description:ja 外部の再生速度変更をニコニコプレイヤーへ同期し、外部シーク後の内部時計と表示時刻のずれを補正します。動画への再シークは行いません。旧単独版を無効にして使用してください。',
   '// @downloadURL  ' + raw,
   '// @updateURL    ' + raw,
   '// @homepageURL  ' + repo,
